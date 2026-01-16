@@ -5,11 +5,10 @@ import { MatListModule } from '@angular/material/list';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'app-admin',
-  standalone: true,
-  imports: [RouterOutlet, RouterLink, MatSidenavModule, MatListModule],
-  templateUrl: './admin.component.html',
-  styleUrl: './admin.component.scss',
+    selector: 'app-admin',
+    imports: [RouterOutlet, RouterLink, MatSidenavModule, MatListModule],
+    templateUrl: './admin.component.html',
+    styleUrl: './admin.component.scss'
 })
 export class AdminComponent {
   constructor(private _authService: AuthService) {}

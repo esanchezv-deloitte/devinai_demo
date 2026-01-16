@@ -22,11 +22,10 @@ interface Account {
 }
 
 @Component({
-  selector: 'app-bank',
-  standalone: true,
-  imports: [CommonModule, FormsModule],
-  templateUrl: './bank.component.html',
-  styleUrl: './bank.component.scss'
+    selector: 'app-bank',
+    imports: [CommonModule, FormsModule],
+    templateUrl: './bank.component.html',
+    styleUrl: './bank.component.scss'
 })
 export class BankComponent implements OnInit {
   userName: string = '';

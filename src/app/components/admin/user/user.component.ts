@@ -12,12 +12,11 @@ export interface PeriodicElement {
 }
 
 @Component({
-  selector: 'app-user',
-  standalone: true,
-  imports: [MatTableModule, MatSortModule],
-  templateUrl: './user.component.html',
-  styleUrl: './user.component.scss',
-  providers: [HttpService],
+    selector: 'app-user',
+    imports: [MatTableModule, MatSortModule],
+    templateUrl: './user.component.html',
+    styleUrl: './user.component.scss',
+    providers: [HttpService]
 })
 export class UserComponent implements AfterViewInit {
   displayedColumns: string[] = ['name', 'phone', 'address', 'blood'];

@@ -7,7 +7,15 @@ export const routes: Routes = [
     component: AdminComponent,
     pathMatch: 'prefix',
     children: [
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: '', redirectTo: 'bank', pathMatch: 'full' },
+      {
+        path: 'bank',
+        loadComponent: () =>
+          import('./bank/bank.component').then(
+            (mod) => mod.BankComponent,
+          ),
+        title: 'BancoDigital',
+      },
       {
         path: 'dashboard',
         loadComponent: () =>

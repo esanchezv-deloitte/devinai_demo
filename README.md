@@ -1,103 +1,145 @@
-# Angular 17 Standalone Example
-This repository contains a sample Angular 17 standalone application. The project demonstrates various features such as state management, REST API integration, environment configurations, route guards, cookie service, storage service, and Angular Material integration.
+# Angular 17 Standalone - Ejemplo
 
-## Table of Contents
-- Getting Started
-- Project Structure
-- Features
-  - State Management
-  - REST API Integration
-  - Environment Configurations
-  - Route Guards
-  - Cookie Service
-  - Storage Service
-  - Angular Material Integration
-- Running the Project
-- Contributing
-- License
+Este repositorio contiene una aplicacion de ejemplo de Angular 17 standalone. El proyecto demuestra varias caracteristicas como gestion de estado, integracion con API REST, configuraciones de entorno, guards de rutas, servicio de cookies, servicio de almacenamiento e integracion con Angular Material.
 
-## Getting Started
-To get a local copy of the project up and running, follow these steps.
+## Tabla de Contenidos
+- Comenzando
+- Estructura del Proyecto
+- Caracteristicas
+  - Gestion de Estado
+  - Integracion con API REST
+  - Configuraciones de Entorno
+  - Guards de Rutas
+  - Servicio de Cookies
+  - Servicio de Almacenamiento
+  - Integracion con Angular Material
+  - Simulacion Bancaria (BancoDigital)
+- Ejecutando el Proyecto
+- Configuracion de Credenciales de Demo
+- Contribuciones
+- Licencia
 
-### Prerequisites
-- Node.js (v14.x or later)
+## Comenzando
+Para obtener una copia local del proyecto en funcionamiento, sigue estos pasos.
+
+### Prerrequisitos
+- Node.js (v14.x o posterior)
 - Angular CLI (v17.x)
 
-### Installation
-1. Clone the repository:
+### Instalacion
+1. Clona el repositorio:
 ```sh
 git clone https://github.com/your-username/angular-17-standalone.git
 ```
 
-2. Navigate to the project directory:
+2. Navega al directorio del proyecto:
 ```sh
 cd angular-17-standalone
 ```
 
-3.Install dependencies:
+3. Instala las dependencias:
 ```sh
 npm install
 ```
 
-## Project Structure
-Here's a brief overview of the project structure:
+## Estructura del Proyecto
+Aqui hay una breve descripcion de la estructura del proyecto:
 
 ```sh
 src/
 ├── app/
 │   ├── components/
+│   │   ├── admin/
+│   │   │   ├── bank/          # Componente de simulacion bancaria
+│   │   │   ├── dashboard/
+│   │   │   └── user/
+│   │   ├── auth/
+│   │   │   ├── login/
+│   │   │   └── register/
+│   │   └── others/
 │   ├── guards/
 │   ├── services/
 │   ├── state/
 │   ├── app.component.ts
-│   ├── app.module.ts
-│   └── app.routing.ts
+│   ├── app.config.ts
+│   └── app.routes.ts
 ├── assets/
 ├── environments/
 │   ├── environment.ts
-│   ├── environment.prod.ts
+│   ├── environment.dev.ts
 ├── index.html
 └── main.ts
 ```
 
-## Features
-### State Management
-The project uses a simple state management solution to handle application state. The state is managed using services and observables. You can find the state management logic in the src/app/state/ directory.
+## Caracteristicas
 
-### REST API Integration
-REST API integration is handled using Angular's HttpClientModule. Services for making HTTP requests are located in the src/app/services/ directory.
+### Gestion de Estado
+El proyecto utiliza una solucion simple de gestion de estado para manejar el estado de la aplicacion. El estado se gestiona usando servicios y observables. Puedes encontrar la logica de gestion de estado en el directorio src/app/state/.
 
-### Environment Configurations
-Environment-specific configurations are stored in the src/environments/ directory. This allows you to manage different settings for development and production builds.
+### Integracion con API REST
+La integracion con API REST se maneja usando el HttpClientModule de Angular. Los servicios para realizar solicitudes HTTP se encuentran en el directorio src/app/services/.
 
-### Route Guards
-Route guards are used to protect certain routes and ensure that only authorized users can access them. You can find the guard implementations in the src/app/guards/ directory.
+### Configuraciones de Entorno
+Las configuraciones especificas del entorno se almacenan en el directorio src/environments/. Esto te permite gestionar diferentes configuraciones para compilaciones de desarrollo y produccion.
 
-### Cookie Service
-The project includes a cookie service for managing cookies. This service can be found in the src/app/services/cookie.service.ts file.
+### Guards de Rutas
+Los guards de rutas se utilizan para proteger ciertas rutas y asegurar que solo los usuarios autorizados puedan acceder a ellas. Puedes encontrar las implementaciones de guards en el directorio src/app/guards/.
 
-### Storage Service
-A storage service is included to abstract interactions with local storage and session storage. This service is located in the src/app/services/storage.service.ts file.
+### Servicio de Cookies
+El proyecto incluye un servicio de cookies para gestionar cookies. Este servicio se puede encontrar en el archivo src/app/services/cookie.service.ts.
 
-### Angular Material Integration
-The project uses Angular Material to enhance the UI with modern design components. Angular Material modules are imported and configured in the src/app/app.module.ts file. You can customize the Angular Material theme and components as needed.
+### Servicio de Almacenamiento
+Se incluye un servicio de almacenamiento para abstraer las interacciones con el almacenamiento local y de sesion. Este servicio se encuentra en el archivo src/app/services/storage.service.ts.
 
-To install Angular Material, use the following commands:
+### Integracion con Angular Material
+El proyecto utiliza Angular Material para mejorar la interfaz de usuario con componentes de diseno moderno. Los modulos de Angular Material se importan y configuran en el archivo src/app/app.config.ts. Puedes personalizar el tema y los componentes de Angular Material segun sea necesario.
+
+Para instalar Angular Material, usa los siguientes comandos:
 
 ```sh
 ng add @angular/material
 ```
 
-## Running the Project
-To run the project locally, use the following command:
+### Simulacion Bancaria (BancoDigital)
+El proyecto incluye una pagina de simulacion bancaria completa con las siguientes caracteristicas:
+- Tarjetas de resumen de balance de cuentas (Ahorros, Corriente, Inversiones)
+- Historial de transacciones con tabla interactiva
+- Acciones rapidas: Transferir dinero, Depositar, Pagar servicios, Solicitar tarjeta
+- Modal de transferencia funcional con validacion de formulario
+- Diseno responsive con Bootstrap 5 y Bootstrap Icons
+
+## Ejecutando el Proyecto
+Para ejecutar el proyecto localmente, usa el siguiente comando:
 
 ```sh
 ng serve
 ```
-Navigate to http://localhost:4200/ in your browser to see the application running.
+Navega a http://localhost:4200/ en tu navegador para ver la aplicacion en funcionamiento.
 
-## Contributing
-Contributions are not allow at this momment for any changes.
+## Configuracion de Credenciales de Demo
+Para habilitar el inicio de sesion con credenciales de demo, agrega la siguiente configuracion en `src/environments/environment.dev.ts`:
 
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+```typescript
+export const environment = {
+  production: false,
+  apiUrl: 'https://dummyjson.com',
+  demoUsers: [
+    {
+      username: 'Eduardo',
+      code: '1234',
+      name: 'Eduardo Sanchez',
+      email: 'eduardo@banco.com'
+    }
+  ]
+};
+```
+
+Despues de configurar, ejecuta `npm start` y podras iniciar sesion con:
+- Usuario: `Eduardo`
+- Contrasena: `1234`
+
+## Contribuciones
+Las contribuciones no estan permitidas en este momento para ningun cambio.
+
+## Licencia
+Este proyecto esta licenciado bajo la Licencia MIT. Consulta el archivo LICENSE para mas detalles.
